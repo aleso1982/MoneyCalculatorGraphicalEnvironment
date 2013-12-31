@@ -10,7 +10,7 @@ import moneycalculator.ui.MoneyViewer;
 public class ExchangeMoneyControl {
     
     private ExchangeRateLoader exchangeRateLouder;
-    private CurrencyDialog currencyDialog;
+    private final CurrencyDialog currencyDialog;
     private MoneyDialog moneyDialog;
     private MoneyViewer moneyViewer;
 
@@ -34,12 +34,12 @@ public class ExchangeMoneyControl {
     }
 
     private Money readMoney() {
-        moneyDialog.execute();
+        moneyDialog.getMoney();
         return moneyDialog.getMoney();
     }
 
     private Currency readCurrency() {
-        currencyDialog.execute();
+        currencyDialog.getCurrency();
         return currencyDialog.getCurrency();
     }
     

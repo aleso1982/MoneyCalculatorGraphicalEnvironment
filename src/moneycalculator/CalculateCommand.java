@@ -1,0 +1,21 @@
+package moneycalculator;
+
+import moneycalculator.ui.CurrencyDialog;
+import moneycalculator.ui.MoneyDialog;
+
+public class CalculateCommand extends Command{
+
+    private final MoneyDialog moneyDialog;
+    private final CurrencyDialog currencyDialog;
+
+    public CalculateCommand(MoneyDialog moneyDialog, CurrencyDialog currencyDialog) {
+        this.moneyDialog = moneyDialog;
+        this.currencyDialog = currencyDialog;
+    }
+    
+    @Override
+    public void execute() {
+        System.out.println(moneyDialog.getMoney() + " " + currencyDialog.getCurrency());
+    }
+
+}

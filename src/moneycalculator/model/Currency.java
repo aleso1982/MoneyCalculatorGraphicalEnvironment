@@ -12,6 +12,11 @@ public class Currency {
         this.symbol = symbol;
     }
 
+    public Currency(String currency) {
+        this.code = currency;
+        
+    }
+
     public Currency(String code, String name) {
         this(code, name, "");
     }
