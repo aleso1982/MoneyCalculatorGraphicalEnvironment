@@ -1,4 +1,4 @@
-package moneycalculator;
+package moneycalculator.ui.swing;
 
 import javax.swing.JPanel;
 import javax.swing.JTextField;

@@ -3,11 +3,9 @@ package moneycalculator.model;
 public class Money {
     
     private final Number amount;
-    //private final double amount;
     private final Currency currency;
 
     public Money(Number amount, Currency currency) {
-    //public Money(double amount, Currency currency) {
         this.amount = amount;
         this.currency = currency;
     }

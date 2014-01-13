@@ -1,4 +1,4 @@
-package moneycalculator;
+package moneycalculator.ui.swing;
 
 import java.awt.FlowLayout;
 import java.awt.event.ItemEvent;
@@ -6,6 +6,7 @@ import java.awt.event.ItemListener;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
 import moneycalculator.model.Currency;
+import moneycalculator.model.CurrencySet;
 import moneycalculator.ui.CurrencyDialog;
 
 public class CurrencyDialogPanel extends JPanel implements CurrencyDialog{
@@ -16,11 +17,12 @@ public class CurrencyDialogPanel extends JPanel implements CurrencyDialog{
     public CurrencyDialogPanel() {
         super(new FlowLayout(FlowLayout.LEFT));
         this.add(createComboBox());
-        this.currency = "EUR";
+        this.currency = "Dolar";
+        
     }
 
     private JComboBox createComboBox() {
-        final JComboBox comboBox = new JComboBox (new String [] {"EUR", "USD"});
+        final JComboBox comboBox = new JComboBox (CurrencySet.getInstance().codeCurrencies());
         comboBox.addItemListener(new ItemListener() {
 
             @Override
@@ -34,7 +36,11 @@ public class CurrencyDialogPanel extends JPanel implements CurrencyDialog{
 
     @Override
     public Currency getCurrency() {
-        return new Currency(currency);
+        return CurrencySet.getInstance().get(currency);
+    }
+
+    @Override
+    public void execute() {
     }
     
     

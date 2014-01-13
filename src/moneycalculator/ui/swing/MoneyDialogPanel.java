@@ -1,7 +1,6 @@
-package moneycalculator;
+package moneycalculator.ui.swing;
 
 import java.awt.FlowLayout;
-import java.awt.PopupMenu;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import javax.swing.JPanel;
@@ -15,6 +14,7 @@ public class MoneyDialogPanel extends JPanel implements MoneyDialog{
 
     private Number number;
     private String amount;
+    private static JTextField result;
     private CurrencyDialog currencyDialog;
 
     public MoneyDialogPanel() {
@@ -52,7 +52,8 @@ public class MoneyDialogPanel extends JPanel implements MoneyDialog{
 
     private void createComponents() {
         this.add(createAmountField());
-        this.add(createDestinationField());
+        result = createDestinationField();
+        this.add(result);
         this.add(createCurrencyDialog());
     }
 
@@ -67,7 +68,12 @@ public class MoneyDialogPanel extends JPanel implements MoneyDialog{
         final JTextField textFielddestination = new JTextField(12);
         textFielddestination.setText("Cantidad convertida");
         return textFielddestination;
+    }   
+    public static void refresh(String number){
+        result.setText(number);
+    }
+    @Override
+    public void execute() {
     }
 
 }
-

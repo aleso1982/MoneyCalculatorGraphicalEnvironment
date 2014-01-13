@@ -1,10 +1,10 @@
-package moneycalculator;
+package moneycalculator.control;
 
 import java.util.HashMap;
 
 public class CommandDictionary {
     
-    private HashMap<String,Command> commandMap = new HashMap<>();
+    private HashMap<String,Command> commandMap = new HashMap<String,Command>();
 
     public Command get(String action) {
         return commandMap.get(action);
@@ -13,5 +13,4 @@ public class CommandDictionary {
     public void register (String action, Command command) {
         commandMap.put(action, command);
     }
-
 }

@@ -1,4 +1,4 @@
-package moneycalculator;
+package moneycalculator.ui.swing;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
@@ -6,6 +6,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import javax.swing.JPanel;
+import moneycalculator.control.ActionListenerFactory;
 import moneycalculator.ui.CurrencyDialog;
 import moneycalculator.ui.MoneyDialog;
 
@@ -14,10 +15,10 @@ public class ApplicationFrame extends JFrame{
     private CurrencyDialog currencyDialog;
     private ActionListenerFactory factory;
 
-    ApplicationFrame(ActionListenerFactory actionListenerFactory) {
+    public ApplicationFrame(ActionListenerFactory actionListenerFactory) {
         super("Money calculator");
         this.factory = actionListenerFactory;
-        this.setSize(500, 300);
+        this.setSize(600, 400);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.createComponents();
@@ -77,4 +78,3 @@ public class ApplicationFrame extends JFrame{
     }
     
 }
-

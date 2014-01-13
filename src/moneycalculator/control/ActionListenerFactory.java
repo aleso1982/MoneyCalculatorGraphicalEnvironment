@@ -1,4 +1,4 @@
-package moneycalculator;
+package moneycalculator.control;
 
 import java.awt.event.ActionListener;
 
